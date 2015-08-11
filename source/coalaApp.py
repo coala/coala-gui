@@ -4,6 +4,7 @@ from gi.repository import Gtk, Gio, GObject
 from source.Searchbar.Searchbar import Searchbar
 from source.support.EditableLabel import EditableLabel
 from source.scrolledWindow.coalaScrolledWindow import coalaScrolledWindow
+from source.greeter.GreeterWindow import GreeterWindow
 
 
 class coalaApp(Gtk.Application):
@@ -18,7 +19,13 @@ class coalaApp(Gtk.Application):
         self.resource = Gio.resource_load(gresource)
         Gio.Resource._register(self.resource)
 
+        self.greeter = None
+
         self.connect("activate", self.activate)
 
+    def _setup_greeter(self, app):
+        self.greeter = GreeterWindow(app)
+
     def activate(self, app):
-        pass
+        self._setup_greeter(app)
+        self.greeter.show()
