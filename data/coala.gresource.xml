@@ -4,5 +4,8 @@
     <file alias="ProjectRow.ui">greeter/ProjectRow.ui</file>
     <file alias="GreeterWindow.ui">greeter/GreeterWindow.ui</file>
     <file alias="EditableLabel.ui">support/EditableLabel.ui</file>
+    <file alias="SettingRow.ui">workspace/SettingRow.ui</file>
+
+    <file alias="workspace.css">workspace/workspace.css</file>
   </gresource>
 </gresources>
