@@ -89,6 +89,7 @@ class GreeterWindow(Gtk.ApplicationWindow):
             self.projectMetadata.add_project(
                 os.path.basename(dialog.get_filename()),
                 str(dialog.get_filename()))
+            self.application.setup_workspace(str(dialog.get_filename()))
 
         dialog.destroy()
 

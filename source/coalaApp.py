@@ -5,6 +5,7 @@ from source.Searchbar.Searchbar import Searchbar
 from source.support.EditableLabel import EditableLabel
 from source.scrolledWindow.coalaScrolledWindow import coalaScrolledWindow
 from source.greeter.GreeterWindow import GreeterWindow
+from source.workspace.WorkspaceWindow import WorkspaceWindow
 
 
 class coalaApp(Gtk.Application):
@@ -20,11 +21,26 @@ class coalaApp(Gtk.Application):
         Gio.Resource._register(self.resource)
 
         self.greeter = None
+        self.workspace = None
 
         self.connect("activate", self.activate)
 
     def _setup_greeter(self, app):
         self.greeter = GreeterWindow(app)
+        self.greeter.list_box.connect("row-activated",
+                                      self._setup_workspace,
+                                      app)
+
+    def _setup_workspace(self, listbox, listboxrow, app):
+        self.workspace = WorkspaceWindow(self,
+                                         listboxrow.get_child().get_name())
+        self.greeter.hide()
+        self.workspace.show()
+
+    def setup_workspace(self, src):
+        self.workspace = WorkspaceWindow(self, src)
+        self.greeter.hide()
+        self.workspace.show()
 
     def activate(self, app):
         self._setup_greeter(app)
