@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/org/coala">
+    <file alias="ProjectRow.ui">greeter/ProjectRow.ui</file>
+    <file alias="GreeterWindow.ui">greeter/GreeterWindow.ui</file>
     <file alias="EditableLabel.ui">support/EditableLabel.ui</file>
   </gresource>
 </gresources>
