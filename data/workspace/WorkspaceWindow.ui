@@ -179,6 +179,74 @@
             <property name="title">Configuration</property>
           </packing>
         </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">true</property>
+            <property name="orientation">horizontal</property>
+            <child>
+              <object class="GtkBox" id="files">
+                <property name="visible">true</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="coalaScrolledWindow">
+                    <property name="max_contentwidth">250</property>
+                    <property name="visible">true</property>
+                    <property name="hscrollbar-policy">never</property>
+                    <property name="vscrollbar-policy">automatic</property>
+                    <child>
+                      <object class="GtkListBox" id="project_files">
+                        <property name="visible">true</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">true</property>
+                    <property name="fill">true</property>
+                    <property name="pack_type">start</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">false</property>
+                <property name="fill">false</property>
+                <property name="pack_type">start</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="visible">true</property>
+                <property name="orientation">vertical</property>
+              </object>
+              <packing>
+                <property name="expand">false</property>
+                <property name="fill">false</property>
+                <property name="pack_type">start</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="result_box">
+                <property name="visible">true</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkStack" id="results">
+                    <property name="visible">true</property>
+                    <property name="margin">20</property>
+                    <style>
+                      <class name="main-container"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="name">results</property>
+            <property name="title">Results</property>
+          </packing>
+        </child>
       </object>
       <packing>
         <property name="expand">true</property>
