@@ -4,7 +4,7 @@ from collections import OrderedDict
 from coalib.settings.ConfigurationGathering import load_configuration
 from coalib.output.ConfWriter import ConfWriter
 from coalib.output.printers.LogPrinter import LogPrinter
-from coalib.output.printers.NullPrinter import NullPrinter
+from pyprint.NullPrinter import NullPrinter
 from coalib.settings.Section import Section
 from coalib.misc.DictUtilities import update_ordered_dict_key
 
